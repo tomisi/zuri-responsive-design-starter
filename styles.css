@@ -7,11 +7,11 @@
     font-family: 'Rubik', sans-serif;
 }
 
+
 div.nav-bar {
     display: flex;
     justify-content: space-between;
     padding: 1rem 6rem;
-    width: 100vw;
     background: #304353;
 }
 
@@ -20,7 +20,7 @@ div.logo {
     color: #bcc3c7;
 }
 
-ul.nav-links {
+.nav-links {
     display: flex;
     margin: 0;
     padding: 0;
@@ -43,6 +43,56 @@ ul li a:hover {
     background: #fff;
     padding: 0.5rem;
 }
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    div.nav-bar {
+        padding: 1rem;
+        
+    }
+    div.logo {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 425px) {
+    .toggle-button {
+        display: flex;
+    }
+    ul li a:hover {
+        padding: .5rem 10.7rem;
+    }
+    div.nav-bar {
+        flex-direction: column;
+    }
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    ul li {
+        margin: .5rem;
+    }
+}
 
 div.hero-section {
     background: #304353;
@@ -62,7 +112,7 @@ div.hero-content-heading h3 {
 }
 
 div.hero-content-heading p {
-    text-align: center;
+    /* text-align: center; */
     padding-top: 0.7rem;
     color: #88949B;
     font-size: 1rem;
@@ -82,9 +132,24 @@ div.hero-content-btn a {
     text-decoration: none;
     color: #bcc3c7;
     font-size: 0.9rem;
-    padding: 10px 30px;
+    padding: .9em 1.5em;
     border-radius: 3px;
     letter-spacing: 2px;
+}
+
+@media screen and (max-width: 768px) {
+    div.hero-section {
+        padding: 3rem;
+    }
+    div.hero-content-heading h3 {
+        font-size: 1.7rem;
+    }
+    div.hero-content-heading p {
+        font-size: .8rem;
+    }
+    div.hero-content-btn a {
+        font-size: .7rem;
+    }
 }
 
 div.hero-background {
@@ -130,6 +195,35 @@ div.hero-background-pos {
     box-shadow: 2px 2px 15px 0 rgb(135 135 135 / 40%);
 }
 
+@media screen and (max-width: 768px) {
+    div.hero-background {
+        padding: 5rem;
+    }
+    div.background {
+        padding: 3em;
+        width: auto;
+        height: auto;
+    }
+    div.background h4 {
+        padding: 1rem;
+    }
+    div.background p {
+        padding-left: 1rem;
+    }
+    div.hero-background-pos {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    div.background h4 + p {
+        text-align: center;
+    }
+    div.background p {
+        padding-left: 0;
+    }
+}
+
 div.snapshot-team {
     background: #f0f0f0;
     text-align: center;
@@ -150,6 +244,17 @@ div.snapshot-team p {
     padding-top: 0.8rem;
 }
 
+@media screen and (max-width: 768px) {
+    div.snapshot-team {
+        display: flex;
+        flex-direction: column;
+    }
+    div.snapshot-team h2+p {
+        width: 80%;
+        align-self: center;
+    }
+}
+
 div.snapshot-box {
     display: flex;
     justify-content: center;
@@ -160,7 +265,8 @@ div.snapshot-box {
 
 div.snapshot-box-content {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 div.box1 {
@@ -208,6 +314,12 @@ div.box1 h5 {
     font-size: 1rem;
 }
 
+@media screen and (max-width: 425px) {
+    div.snapshot-box-content {
+        flex-direction: column;
+    }
+}
+
 div.gallery-section {
     background: #fff;
     padding: 4rem;
@@ -232,10 +344,10 @@ div.gallery-content p {
 }
 
 div.gallery-img {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   padding-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 3rem;
 }
 
 div.img {
@@ -245,6 +357,29 @@ div.img {
 div.img img {
     width: 250px;
     height: 180px;
+}
+
+@media screen and (max-width: 768px) {
+    div.gallery-content {
+        display: flex;
+        flex-direction: column;
+    }
+    div.gallery-content h4+p {
+        width: 80%;
+        align-self: center;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 425px) {
+    div.gallery-section {
+        padding: 2rem;
+    }
+    div.gallery-content h4 {
+        font-size: 1.2rem;
+    }
+    div.gallery-content p {
+        font-size: .8rem;
+    }
 }
 
 div.footer {
@@ -290,7 +425,7 @@ input[type="text"] {
 }
 
 input[type="email"] {
-    margin-right: 10px;
+    
     padding: 10px 20px;
     width: 25%;
     outline: none;
@@ -345,16 +480,18 @@ div.footer h6 {
     font-size: 1rem;
     padding-top: 6rem;
 }
-@media (min-width: 600px) {
-    p {
-        font-size: 1.25rem;
+
+@media screen and (max-width: 768px) {
+    div.footer-input {
+        flex-direction: column;
+    }
+
+    input[type="text"], input[type="email"] {
+        width: 70%;
+        margin: .5rem auto;
+
+    }
+    textarea {
+        width: 70%;
     }
 }
-@media (min-width: 800px) {
-    p { 
-        font-size: 1.5rem;
-        line-height: 
-     }
-}
-
-        
